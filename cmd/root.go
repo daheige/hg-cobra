@@ -39,6 +39,7 @@ type User struct {
 var cfgFile string
 
 func init() {
+	//用于viper读取配置，而viper之所以能直接用，是因为底层源码init()方法实例化了var v *Viper
 	cobra.OnInitialize(initConfig)
 
 	rootCmd.Flags().StringVarP(&name, "name", "n", "", "person's name")
